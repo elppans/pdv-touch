@@ -28,12 +28,14 @@ interface_exec() {
 # Configuração de Profile e Storage
 local temp_profile
 local local_storage
+local interface
 
 temp_profile="$HOME/.interface/chromium"
 local_storage="$temp_profile/Default/Local Storage"
+interface="/Zanthus/Zeus/Interface"
 
 mkdir -p "$local_storage"
-
+chown -R zanthus:zanthus "$interface"
 echo "Iniciando interface..."
 sleeping 10
 
@@ -61,7 +63,7 @@ setsid nohup chromium-browser --no-sandbox \
 --autoplay-policy=no-user-gesture-required \
 --enable-speech-synthesis \
 --kiosk \
-file:////Zanthus/Zeus/Interface/index.html &>>/dev/null 
+file:///"$interface"/index.html &>>/dev/null 
 }
 
 # Execução das funções
