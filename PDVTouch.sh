@@ -10,23 +10,6 @@ for i in $(seq "$time" -1 1); do
 done
 }
 
-# Função para verificar e posicionar a janela Java
-# pdvjava_param() {
-#   while true; do
-#     WMID=$(wmctrl -l | grep "Zanthus Retail" | cut -d " " -f1)
-#     if [ -z "$WMID" ]; then
-#       echo "Aguardando 'Zanthus Retail' iniciar..."
-#       sleeping 5
-#       clear
-#     else
-#       # Garantir que o Java seja configurado na posição parametrizada.
-#       wmctrl -i -r $WMID -e "0,$posicaox1,-1,-1"
-#       echo "Janela 'Zanthus Retail' encontrada e configurada."
-#       break
-#     fi
-#   done
-# }
-
 # Função para executar o Java (base PDVJava)
 pdvjava_exec() {
 # /usr/bin/unclutter 1> /dev/null &
@@ -37,7 +20,6 @@ nohup dualmonitor_control-PDVJava &>>/dev/null &
 nohup recreate-user-rabbitmq.sh &>>/dev/null &
 echo "Iniciando pdvJava2..."
 nohup xterm -e "/Zanthus/Zeus/pdvJava/pdvJava2" &>>/dev/null &
-# pdvjava_param
 sleeping 25
 }
 
