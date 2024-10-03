@@ -20,7 +20,7 @@ nohup dualmonitor_control-PDVJava &>>/dev/null &
 nohup recreate-user-rabbitmq.sh &>>/dev/null &
 echo "Iniciando pdvJava2..."
 nohup xterm -e "/Zanthus/Zeus/pdvJava/pdvJava2" &>>/dev/null &
-sleeping 25
+sleeping 5
 }
 
 # Função para executar o Interface
@@ -61,7 +61,7 @@ setsid nohup chromium-browser --no-sandbox \
 --autoplay-policy=no-user-gesture-required \
 --enable-speech-synthesis \
 --kiosk \
-file:////Zanthus/Zeus/Interface/index.html &>>/dev/null &
+file:////Zanthus/Zeus/Interface/index.html &>>/dev/null 
 }
 
 # Execução das funções
@@ -70,4 +70,4 @@ interface_exec
 
 # Finalização
 echo "Esta janela será fechada após..."
-sleeping 55
+sleeping 5
