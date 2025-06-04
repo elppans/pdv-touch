@@ -11,7 +11,7 @@ nohup recreate-user-rabbitmq.sh &
 xterm -e /Zanthus/Zeus/pdvJava/pdvJava2 &
 
 clear
-for i in seq 30 -1 1 ; do echo -ne "Aguarde $i Segundos.\r" ; sleep 1 ; done
+for i in `seq 30 -1 1` ; do echo -ne "Aguarde $i Segundos.\r" ; sleep 1 ; done
 
 nohup chromium-browser --disable-gpu \
 --user-data-dir="$pdv_data" \
