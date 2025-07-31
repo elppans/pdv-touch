@@ -7,6 +7,7 @@ sudo chmod -R 777 "$pdv_data"
 
 chmod -x /usr/local/bin/igraficaJava
 chmod -x /usr/local/bin/dualmonitor_control-PDVJava
+chmod +x /Zanthus/Zeus/pdvJava/x11vnc.sh
 nohup recreate-user-rabbitmq.sh &
 /Zanthus/Zeus/pdvJava/pdvJava2 &
 /Zanthus/Zeus/pdvJava/x11vnc.sh &
