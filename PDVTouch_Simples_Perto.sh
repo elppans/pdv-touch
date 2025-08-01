@@ -11,8 +11,6 @@ chmod +x /Zanthus/Zeus/pdvJava/x11vnc.sh
 nohup recreate-user-rabbitmq.sh &
 /Zanthus/Zeus/pdvJava/pdvJava2 &
 /Zanthus/Zeus/pdvJava/x11vnc.sh &
-/root/self_perto_config.sh &
-/Zanthus/Zeus/pdvJava/monitor-pos-set-perto.sh | tee /tmp/monitor-pos-set-perto.log
 
 sleep 20
 
