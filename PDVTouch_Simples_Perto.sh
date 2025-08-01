@@ -12,6 +12,7 @@ nohup recreate-user-rabbitmq.sh &
 /Zanthus/Zeus/pdvJava/pdvJava2 &
 /Zanthus/Zeus/pdvJava/x11vnc.sh &
 /root/self_perto_config.sh &
+/Zanthus/Zeus/monitor-pos-set.sh | tee /tmp/monitor-pos-set.log
 
 sleep 20
 
