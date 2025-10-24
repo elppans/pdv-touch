@@ -14,10 +14,11 @@ clear
 for i in `seq 30 -1 1` ; do echo -ne "Aguarde $i Segundos.\r" ; sleep 1 ; done
 
 nohup chromium-browser --disable-gpu \
+--disk-cache-dir=/tmp/chromium-cache \
 --user-data-dir="$pdv_data" \
+--test-type \
 --no-sandbox \
 --kiosk \
 --no-context-menu \
---disable-pinch --disable-gpu --test-type --incognito \
 --disable-translate file:////Zanthus/Zeus/Interface/index.html
-#--disk-cache-dir=/tmp/chromium-cache
+#--user-data-dir=$(mktemp -d) \
