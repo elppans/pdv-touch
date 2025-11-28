@@ -24,12 +24,22 @@ xterm -e /Zanthus/Zeus/pdvJava/pdvJava2 &
 clear
 for i in `seq 30 -1 1` ; do echo -ne "Aguarde $i Segundos.\r" ; sleep 1 ; done
 
-nohup chromium-browser --disable-gpu \
---disk-cache-dir=/tmp/chromium-cache \
---user-data-dir="$pdv_data" \
---test-type \
---no-sandbox \
---kiosk \
---no-context-menu \
---disable-translate file:////Zanthus/Zeus/Interface/index.html
-#--user-data-dir=$(mktemp -d) \
+# Opções do Chromium em um array
+chromium_options=(
+  --disable-gpu
+  --disk-cache-dir=/tmp/chromium-cache
+  --user-data-dir="$pdv_data"
+  # --user-data-dir=$(mktemp -d)
+  --test-type
+  --no-sandbox
+  --kiosk
+  --no-context-menu
+  --disable-translate
+  # --incognito          # Modo anônimo
+)
+
+# URL para abrir
+url="file:////Zanthus/Zeus/Interface/index.html"
+
+# Executa o Chromium com nohup em background
+nohup chromium-browser "${chromium_options[@]}" "$url" # &
