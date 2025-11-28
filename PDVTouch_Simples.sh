@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Espelhar = Mostrar no monitor segundário tudo que há no monitor primário
+# sleep 5
+# xrandr --output VGA-1 --same-as HDMI-1
+
+# Configura o layout do teclado para brasileiro ABNT2 usando o utilitário setxkbmap
+# /usr/bin/setxkbmap -layout br -variant abnt2 > /tmp/setxkbmap.log 2>&1
+
+if ! mountpoint -q /media/root/GERSAT3/; then
+    mount /media/root/GERSAT3/
+fi
+
 pdv_data="$HOME/.interface"
 export pdv_data
 sudo mkdir -p "$pdv_data"
