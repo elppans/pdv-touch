@@ -44,6 +44,8 @@ xrandr --output "$MONITOR1" --mode $(grep 'Modeline' /tmp/cvt_mode | sed 's/Mode
 # xrandr --output "MONITOR2" --same-as "$MONITOR1"
 
 ######################################################################################################
+#                     ## Adicionar nova resolução de monitor em xorg/X11 ##                          #
+#                                                                                                    #
 # **Exemplo de sequência de comandos**                                                               #
 #                                                                                                    #
 # xrandr | grep " connected"                                                                         #
