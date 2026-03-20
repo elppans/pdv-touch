@@ -42,3 +42,25 @@ xrandr --output "$MONITOR1" --mode $(grep 'Modeline' /tmp/cvt_mode | sed 's/Mode
 
 # Configura o monitor MONITOR2 para espelhar exatamente a saída do monitor MONITOR1 (Descomentar para usar)
 # xrandr --output "MONITOR2" --same-as "$MONITOR1"
+
+######################################################################################################
+# **Exemplo de sequência de comandos**                                                               #
+#                                                                                                    #
+# xrandr | grep " connected"                                                                         #
+#                                                                                                    #
+# Resposta:                                                                                          #
+# eDP-1 connected primary 1366x768+0+0 (normal left inverted right x axis y axis) 344mm x 194mm      #
+# HDMI-1 connected 1360x768+1366+0 (normal left inverted right x axis y axis) 410mm x 230mm          #
+#                                                                                                    #
+# cvt 1920 1080 60                                                                                   #
+#                                                                                                    #
+# Resposta:                                                                                          #
+# # 1920x1080 59.96 Hz (CVT 2.07M9) hsync: 67.16 kHz; pclk: 173.00 MHz                               #
+# Modeline "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync         #
+#                                                                                                    #
+# xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync #
+# xrandr --addmode eDP-1 "1920x1080_60.00"                                                           #
+# xrandr --output eDP-1 --mode "1920x1080_60.00"                                                     #
+#                                                                                                    #
+# xrandr --output HDMI-1 --same-as eDP-1 # Opcional, somente se quiser espelhar                      #
+######################################################################################################
